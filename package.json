@@ -1,15 +1,14 @@
 {
   "name": "spa-tony-stark",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "SPA para chatear con Tony Stark usando Gemini AI",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite src",
+    "build": "vite build src",
+    "test": "vitest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  
+  "type": "module",
   "devDependencies": {
     "vite": "^8.0.8",
     "vitest": "^4.1.4"
