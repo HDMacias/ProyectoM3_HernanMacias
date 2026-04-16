@@ -1,9 +1,11 @@
+import { getChatView, initChat} from './chat.js';
+
 function getHomeView() {
   return `<div class="view">
       <h1 class="home__title">Hola. Soy Tony Stark.</h1>
       <p class="home__subtitle">
         Genio, multimillonario, filántropo... y ahora disponible para chatear.
-        Si tenés alguna pregunta inteligente, adelante. Si no, también.
+        Si tienes alguna pregunta inteligente, adelante. Si no, también.
       </p>
       <a href="/chat" class="home__cta">Iniciar conversación →</a>
     </div>
@@ -37,16 +39,18 @@ function getNotFoundView() {
 }
 
 const routes = {
-  "/": getHomeView,
-  "/home": getHomeView,
-  "/chat": () => '<div class="view">Cargando chat...</div>',
-  "/about": getAboutView,
+  '/':      getHomeView,
+  '/home':  getHomeView,
+  '/chat':  getChatView,
+  '/about': getAboutView,
 };
 
 function renderView(path) {
   const viewFn = routes[path] ?? getNotFoundView;
   document.getElementById("app").innerHTML = viewFn();
   updateActiveLink(path);
+
+  if (path === '/chat') initChat();
 }
 
 function navigateTo(url) {
