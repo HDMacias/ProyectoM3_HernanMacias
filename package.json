@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "SPA para chatear con Tony Stark usando Gemini AI",
   "scripts": {
-    "dev": "vite src",
-    "build": "vite build src",
+    "dev": "vite",
+    "build": "vite build",
     "test": "vitest",
     "vercel-dev": "vercel dev"
   },
@@ -13,5 +13,8 @@
     "jsdom": "^29.0.2",
     "vite": "^8.0.8",
     "vitest": "^4.1.4"
-  }
+  },
+  "outputDirectory": "build"
+
 }
+
