@@ -53,16 +53,29 @@ async function handleSubmit(e) {
   addMessage("user", text);
   addLoadingMessage();
 
-  setTimeout(() => {
+  try {
+    const response = await fetch("/api/funtions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || "Error del servidor");
+    }
+
+    const data = await response.json();
     removeLoadingMessage();
-    addMessage(
-      "stark",
-      "¿Eso es lo mejor que tienes? Yo construí una armadura en una cueva.",
-    );
+    addMessage("stark", data.reply);
+  } catch (error) {
+    removeLoadingMessage();
+    addMessage("error", `Error: ${error.message}`);
+  } finally {
     input.disabled = false;
     button.disabled = false;
     input.focus();
-  }, 1000);
+  }
 }
 
 export function getChatView() {
@@ -99,5 +112,3 @@ export function initChat() {
     renderMessages();
   }
 }
-
-

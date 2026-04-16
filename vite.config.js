@@ -10,3 +10,9 @@ export default defineConfig({
     emptyOutDir: true,
   },
 });
+
+export const testConfig = {
+  globals: true,
+  environment: "jsdom",
+  include: ["tests/**/*.{test,spec}.js"],
+};
