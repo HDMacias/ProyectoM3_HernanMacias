@@ -182,4 +182,11 @@ Proyecto educativo - Proyecto Integrador 3 de Henry
 
 ---
 
+## Enlaces importantes
+
+- Repositorio: https://github.com/HDMacias/ProyectoM3_HernanMacias
+- Despliegue: https://proyecto-m3-hernan-macias.vercel.app 
+
+---
+
 **¿Preguntas?** Consulta la [guía oficial del proyecto](https://docs.google.com/document/d/1...) o la documentación de [Google Gemini](https://ai.google.dev/docs)
